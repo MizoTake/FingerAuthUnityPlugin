@@ -1,0 +1,7 @@
+# FingerAuthUnity
+Unity Plugin Project
+
+指紋認証をUnityで行うためのAndroidStudioのProjectです。
+
+buildした.jarは./fingerauthunity/libsにある.jarファイルになります。
+使用する場合は、UnityProjectのAssets配下にPluginフォルダを作成、Pluginフォルダ配下にAndroidフォルダを作成したら、そこに入れてください。
