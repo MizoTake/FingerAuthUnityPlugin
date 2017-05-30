@@ -1,7 +1,7 @@
 package com.example.fingerauthunity.lib;
 
 import android.annotation.TargetApi;
-import android.content.Context;
+import android.app.Activity;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
 import android.os.CancellationSignal;
@@ -22,9 +22,10 @@ public class FingerAuth {
     private static CancellationSignal cancel;
 
     @TargetApi(Build.VERSION_CODES.M)
-    public static void AuthStart(Context context) {
+    public static void AuthStart() {
         UnityPlayer.UnitySendMessage("FingerManager", "FingerAuthResult", "0");
-        FingerprintManager fingerprintManager = (FingerprintManager) context.getSystemService(FINGERPRINT_SERVICE);
+        final Activity activity = UnityPlayer.currentActivity;
+        FingerprintManager fingerprintManager = (FingerprintManager) activity.getSystemService(FINGERPRINT_SERVICE);
         cancel = new CancellationSignal();
         fingerprintManager.authenticate(null, cancel, 0, new FingerprintManager.AuthenticationCallback() {
             @Override
