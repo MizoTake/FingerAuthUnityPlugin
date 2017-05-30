@@ -14,7 +14,7 @@ import static android.content.Context.FINGERPRINT_SERVICE;
 
 
 /**
- * Created by TakeruDesk on 2017/05/30.
+ * Created by MizoTake on 2017/05/30.
  */
 
 public class FingerAuth {
